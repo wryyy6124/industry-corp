@@ -2,7 +2,17 @@
   ページ共通スタイル_START
 ------------------------------- */
 
+:root {
+  --page-color-black: #2a2a2a;
+  --page-color-white: #fff;
+  --page-color-red: #e60012;
+}
+
 body {
+  color: var(--page-color-black);
+  font-size: 62.5%;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", sans-serif;
   line-height: 1.5;
   position: relative;
   overflow: visible;
