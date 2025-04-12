@@ -10,35 +10,43 @@ $doc.addEventListener("DOMContentLoaded", () => {
   // ------------------------------------------------------------
   // ハンバーガーメニュー（SP・タブレット時のみ）
   // ------------------------------------------------------------
-
-  // 関数定義
   const humbugerMenu = {
-    // DOM取得
-    $body: $doc.querySelector("#Hamburger"),
+    $hamburger: $doc.querySelector("#Hamburger"),
 
-    $drawer: {
-      bg: $doc.querySelector(".header__nav-body"),
-      menu: $doc.querySelector(".header__nav-list"),
+    drawer: {
+      $bg: $doc.querySelector(".header__nav-body"),
+      $menu: $doc.querySelector(".header__nav-list"),
     },
 
-    // トグル
     toggleMenu() {
-      $doc.body.classList.toggle("is_active");
+      $doc.body.classList.toggle("boot_drawer");
     },
 
-    // クローズのみ
     closeMenu() {
-      $doc.body.classList.remove("is_active");
+      $doc.body.classList.remove("boot_drawer");
     },
 
-    // 各イベントの起動
+    watchBreakpoint() {
+      const mq = window.matchMedia("(min-width: 1024px)");
+
+      const handleChange = (e) => {
+        if (e.matches) {
+          this.closeMenu();
+        }
+      };
+
+      handleChange(mq);
+      mq.addEventListener("change", handleChange);
+    },
+
     init() {
-      this.$body.addEventListener("click", this.toggleMenu);
-      this.$drawer.bg.addEventListener("click", this.closeMenu);
-      this.$drawer.menu.addEventListener("click", (e) => e.stopPropagation());
+      this.$hamburger.addEventListener("click", this.toggleMenu.bind(this));
+      this.drawer.$bg.addEventListener("click", this.closeMenu.bind(this));
+      this.drawer.$menu.addEventListener("click", (e) => e.stopPropagation());
+
+      this.watchBreakpoint();
     },
   };
 
-  // スクリプト実行
   humbugerMenu.init();
 });
