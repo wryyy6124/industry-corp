@@ -37,32 +37,47 @@
         <!-- inner -->
         <div class="header__inner">
           <!-- logo -->
-          <h1 class="header__logo">双海工業株式会社</h1>
+          <h1 class="header__logo">
+            <img src="./images/logo.svg" alt="双海工業株式会社" />
+          </h1>
           <!-- navi -->
           <nav class="header__nav">
-            <!-- list -->
-            <ul class="header__nav-list">
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">ホーム</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">会社情報</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">事業内容</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">お知らせ</a>
-              </li>
-              <li class="header__nav-item">
-                <a href="#" class="header__nav-link">採用情報</a>
-              </li>
-            </ul>
+            <!-- navi-wrapper -->
+            <div class="header__nav-body">
+              <!-- list -->
+              <ul class="header__nav-list">
+                <li class="header__nav-item">
+                  <a href="#" class="header__nav-link">ホーム</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#" class="header__nav-link">会社情報</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#" class="header__nav-link">事業内容</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#" class="header__nav-link">お知らせ</a>
+                </li>
+                <li class="header__nav-item">
+                  <a href="#" class="header__nav-link" target="_blank"
+                    >採用情報</a
+                  >
+                </li>
+                <li class="header__nav-item sp__only">
+                  <a href="#" class="header__nav-link">お問い合わせ</a>
+                </li>
+              </ul>
+            </div>
+            <!-- hamburger sp-only -->
+            <div id="Hamburger" class="header__nav-hamburger">
+              <span></span>
+              <span></span>
+            </div>
           </nav>
         </div>
-        <!-- button -->
-        <div class="header__contact">
-          <a href="#" class="header__contact-link">お問い合わせ</a>
+        <!-- contact pc-only -->
+        <div class="header__outer-contact">
+          <a href="#" class="header__outer-link">お問い合わせ</a>
         </div>
       </header>
 
