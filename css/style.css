@@ -5,7 +5,7 @@
 :root {
   --page-color-black: #2a2a2a;
   --page-color-white: #fff;
-  --page-color-red: #e60012;
+  --page-color-corporate: #e60012;
 }
 
 body {
@@ -100,7 +100,7 @@ body.boot_drawer .header__nav-list {
 }
 
 .header__nav-hamburger {
-  background-color: var(--page-color-red);
+  background-color: var(--page-color-corporate);
   border-radius: 1000px;
   cursor: pointer;
   display: flex;
@@ -142,7 +142,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   padding: 0.5em 1.5em;
 }
 .header__nav-link:hover {
-  color: var(--page-color-red);
+  color: var(--page-color-corporate);
 }
 
 .header__nav-link[target="_blank"] {
@@ -273,7 +273,7 @@ PC_START
     gap: 0.8em;
   }
   .header__nav-link::before {
-    background-color: var(--page-color-red);
+    background-color: var(--page-color-corporate);
     content: "";
     position: absolute;
     top: -100%;
@@ -301,7 +301,7 @@ PC_START
   }
 
   .header__outer-link {
-    background-color: var(--page-color-red);
+    background-color: var(--page-color-corporate);
     border-radius: 0 0 0 18px;
     color: var(--page-color-white);
     font-size: 14px;
