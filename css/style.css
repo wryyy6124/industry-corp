@@ -174,6 +174,88 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   フッター
 ------------------------------- */
 
+.footer {
+  border-top: 1px solid var(--page-color-corporate);
+}
+
+.footer__inner {
+  margin: 0 auto;
+  padding: 14.93vw 0 6.4vw 0;
+  width: 89.3%;
+  max-width: 1040px;
+}
+
+.footer__content {
+  display: flex;
+  flex-flow: column-reverse wrap;
+  row-gap: 14.94vw;
+  margin-bottom: 21.3vw;
+}
+
+.footer__company {
+  font-size: clamp(13px, 4vw, 14px);
+}
+
+.footer__logo {
+  margin-bottom: 8.8vw;
+}
+
+.footer__address > span:not(:last-of-type) {
+  margin-right: 1em;
+}
+
+.footer__contact > span {
+  display: inline-block;
+}
+.footer__contact > span:not(:last-of-type) {
+  margin-right: 1.5em;
+}
+
+.footer__nav-group:not(:last-of-type) {
+  margin-bottom: 14.94vw;
+}
+
+.footer__nav-link {
+  font-size: clamp(13px, 4vw, 14px);
+  line-height: 1.57;
+  display: inline-block;
+  transition: 0.4s color;
+  position: relative;
+}
+.footer__nav-link:hover {
+  color: var(--page-color-corporate);
+}
+
+.footer__nav-link[target="_blank"] {
+  font-size: clamp(13px, 4vw, 14px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.footer__nav-link[target="_blank"]::after {
+  background-image: url("../images/icon-link-bk.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
+.footer__nav-item:not(:last-of-type) {
+  margin-bottom: 1em;
+}
+
+.footer__copyright strong {
+  font-size: clamp(11px, 3vw, 12px);
+  font-weight: 400;
+  text-align: center;
+  display: block;
+}
+
 /* ===============================
 
 ~ 768px
@@ -232,6 +314,23 @@ SPレイアウト_END
   /* -------------------------------
     フッター
   ------------------------------- */
+
+  .footer__inner {
+    padding: 7.47vw 0 3.2vw 0;
+  }
+
+  .footer__content {
+    row-gap: 7.47vw;
+    margin-bottom: 10.15vw;
+  }
+
+  .footer__logo {
+    margin-bottom: 4.4vw;
+  }
+
+  .footer__nav-group:not(:last-of-type) {
+    margin-bottom: 7.47vw;
+  }
 }
 /* ===============================
 
@@ -347,6 +446,51 @@ PC_START
   /* -------------------------------
     フッター
   ------------------------------- */
+
+  .footer__inner {
+    padding: 79px 20px 24px 20px;
+  }
+
+  .footer__content {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    column-gap: 0;
+    margin-bottom: 80px;
+  }
+
+  .footer__logo {
+    margin-bottom: 32px;
+  }
+
+  .footer__nav {
+    display: flex;
+    gap: 79px;
+  }
+
+  .footer__nav-group {
+    background-color: var(--page-color-white);
+    display: flex;
+    flex-flow: column-reverse wrap;
+    gap: 28px;
+    writing-mode: vertical-rl;
+    transition: initial;
+    position: relative;
+    width: fit-content;
+    height: auto;
+  }
+
+  .footer__nav-group:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+
+  .footer__nav-item:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+
+  .footer__email {
+    display: block;
+    width: 100%;
+  }
 }
 /* ===============================
 
