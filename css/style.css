@@ -170,6 +170,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   メインコンテンツ
 ------------------------------- */
 
+/* ヒーローセクション */
 .helo {
   background-image: url("../images/top/sp/hero.png");
   background-position: top;
@@ -194,6 +195,108 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   justify-content: center;
   writing-mode: vertical-rl;
   padding-top: 1.5em;
+}
+
+/* ニュースセクション */
+.news {
+  margin-bottom: 80px;
+  width: 100%;
+  height: auto;
+}
+
+.news__inner {
+  position: relative;
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 89.3%;
+  max-width: 1920px;
+  height: auto;
+}
+
+.news__block {
+  background-color: var(--page-color-white);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.news__heading {
+  font-size: clamp(28px, 6vw, 36px);
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.news__heading > span {
+  display: block;
+}
+.news__heading-en {
+  font-size: 0.5em;
+}
+
+.news__list {
+  font-size: clamp(13px, 5vw, 14px);
+  margin-bottom: 2.5em;
+}
+
+.news__item:not(:last-of-type) {
+  margin-bottom: 1.5em;
+}
+
+.news__dl {
+  display: block;
+}
+
+.news__dl {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 0.75em;
+}
+
+.news__dt {
+  font-weight: normal;
+  display: flex;
+  gap: 1em;
+  width: 100%;
+}
+
+.news__date,
+.news__category {
+  width: fit-content;
+}
+
+.news__category {
+  background-color: var(--page-color-black);
+  color: var(--page-color-white);
+  font-size: 0.785em;
+  padding: 0.15em 0.5em;
+}
+
+.news__dd {
+  width: 100%;
+}
+
+.news__more {
+  margin-left: auto;
+  width: 50%;
+}
+
+.news__more-link {
+  background-color: var(--page-color-corporate);
+  color: var(--page-color-white);
+  font-size: clamp(13px, 5vw, 14px);
+  font-weight: 700;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  position: relative;
+  padding: 1.5em 0 1.5em 1em;
+}
+
+.news__more-link::after {
+  background-color: var(--page-color-white);
+  content: "";
+  flex-grow: 1;
+  height: 1px;
 }
 
 /* -------------------------------
@@ -318,13 +421,14 @@ SPレイアウト_END
     メインコンテンツ
   ------------------------------- */
 
-  /* 暫定付与 */
-  .main {
-    height: 1500px;
-  }
-
+  /* ヒーローセクション */
   .helo {
     background-image: url("../images/top/pc/hero.png");
+  }
+
+  /* ニュースセクション */
+  .news__more {
+    width: 35%;
   }
 
   /* -------------------------------
@@ -446,6 +550,7 @@ PC_START
     メインコンテンツ
   ------------------------------- */
 
+  /* ヒーローセクション */
   .helo__inner {
     width: calc(100% - 40px);
     min-height: 500px;
@@ -457,6 +562,58 @@ PC_START
     left: 0;
     top: -1.5em;
     padding-top: 0;
+  }
+
+  /* ニュースセクション */
+  .news {
+    margin-bottom: 120px;
+  }
+
+  .news__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: -120px;
+    padding-top: 0;
+    width: 100%;
+  }
+
+  .news__block {
+    margin: initial;
+    padding: 40px 0 0 40px;
+    max-width: 640px;
+  }
+
+  .news__heading {
+    padding-right: 20px;
+  }
+
+  .news__list {
+    margin-bottom: 80px;
+    padding-right: 20px;
+  }
+
+  .news__dl {
+    gap: 0;
+    row-gap: 1em;
+  }
+
+  .news__dt {
+    min-width: 170px;
+    width: 25%;
+  }
+
+  .news__dd {
+    width: 70%;
+  }
+
+  .news__more {
+    max-width: 228px;
+  }
+
+  .news__more-link {
+    gap: 3em;
+    padding-left: 3em;
   }
 
   /* -------------------------------
