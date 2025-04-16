@@ -38,8 +38,34 @@ SPレイアウト_START
 =============================== */
 
 /* -------------------------------
+  ページ共通パーツ
+------------------------------- */
+
+.common__button {
+  background-color: var(--page-color-corporate);
+  color: var(--page-color-white);
+  font-size: clamp(13px, 5vw, 14px);
+  font-weight: 700;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  position: relative;
+  padding: 1.5em 0 1.5em 1em;
+}
+
+.common__button.common__center-line::after {
+  background-color: var(--page-color-white);
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+}
+
+/* -------------------------------
   ヘッダー
 ------------------------------- */
+
 .header {
   background-color: var(--page-color-white);
   position: sticky;
@@ -215,8 +241,18 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 
 .news__block {
   background-color: var(--page-color-white);
+  position: relative;
   margin: 0 auto;
   width: 100%;
+}
+.news__block::before {
+  background-color: var(--page-color-corporate);
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 1.5em;
+  width: 1px;
+  height: 80px;
 }
 
 .news__heading {
@@ -254,6 +290,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 .news__dt {
   font-weight: normal;
   display: flex;
+  align-items: center;
   gap: 1em;
   width: 100%;
 }
@@ -267,7 +304,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   background-color: var(--page-color-black);
   color: var(--page-color-white);
   font-size: 0.785em;
-  padding: 0.15em 0.5em;
+  padding: 0.25em 0.5em;
 }
 
 .news__dd {
@@ -279,24 +316,76 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   width: 50%;
 }
 
-.news__more-link {
-  background-color: var(--page-color-corporate);
-  color: var(--page-color-white);
-  font-size: clamp(13px, 5vw, 14px);
-  font-weight: 700;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  position: relative;
-  padding: 1.5em 0 1.5em 1em;
+/* 会社情報 */
+.company {
+  margin-bottom: 140px;
 }
 
-.news__more-link::after {
-  background-color: var(--page-color-white);
+.company__inner {
+  position: relative;
+  margin: 0 auto;
+  width: 89.3%;
+  max-width: 1040px;
+  height: auto;
+}
+
+.company__header-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.company__heading {
+  font-size: clamp(26px, 6vw, 28px);
+  font-weight: 700;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  writing-mode: vertical-rl;
+  position: relative;
+}
+.company__heading::before {
+  background-color: var(--page-color-corporate);
   content: "";
-  flex-grow: 1;
-  height: 1px;
+  position: absolute;
+  top: -100px;
+  left: 0.75em;
+  width: 1px;
+  height: 80px;
+}
+
+.company__heading-ja {
+  display: flex;
+  align-items: center;
+}
+
+.company__heading-en {
+  font-size: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.company__background {
+  background-image: url("../images/top/sp/company-header-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  flex: 4;
+  min-height: 292px;
+}
+
+.company__link {
+  width: 65%;
+}
+
+.company__description {
+  font-size: clamp(13px, 5vw, 14px);
+  line-height: 2;
+  width: 100%;
 }
 
 /* -------------------------------
@@ -402,9 +491,6 @@ SPレイアウト_END
   /* -------------------------------
     ヘッダー
   ------------------------------- */
-  .header__inner {
-    width: calc(100% - 40px);
-  }
 
   .header__logo {
     width: fit-content;
@@ -429,6 +515,22 @@ SPレイアウト_END
   /* ニュースセクション */
   .news__more {
     width: 35%;
+  }
+
+  /* 会社情報 */
+  .company__header-group {
+    gap: 50px;
+    margin-bottom: 40px;
+  }
+
+  .company__background {
+    background-image: url("../images/top/pc/company-header-bg.png");
+    max-width: 800px;
+    min-height: 400px;
+  }
+
+  .company__link {
+    width: 50%;
   }
 
   /* -------------------------------
@@ -585,6 +687,10 @@ PC_START
     padding: 40px 0 0 40px;
     max-width: 640px;
   }
+  .news__block::before {
+    top: -50px;
+    left: calc(40px + 2.5em);
+  }
 
   .news__heading {
     padding-right: 20px;
@@ -593,6 +699,10 @@ PC_START
   .news__list {
     margin-bottom: 80px;
     padding-right: 20px;
+  }
+
+  .news__category {
+    padding: 0.5em;
   }
 
   .news__dl {
@@ -613,9 +723,29 @@ PC_START
     max-width: 228px;
   }
 
-  .news__more-link {
-    gap: 3em;
-    padding-left: 3em;
+  /* 会社情報 */
+  .company__inner {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .company__header-group {
+    justify-content: space-between;
+    margin-bottom: 58px;
+  }
+
+  .company__heading {
+    font-size: clamp(34px, 6vw, 36px);
+  }
+
+  .company__link {
+    max-width: 228px;
+    width: 100%;
+  }
+
+  .company__description {
+    margin-right: auto;
+    width: 63%;
   }
 
   /* -------------------------------
