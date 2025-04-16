@@ -1,6 +1,9 @@
 # images配下の画像ファイル全てをGitでの管理対象外とする
 images/
 
+# HTMLテンプレート
+template.html
+
 # 他、管理不要のファイルを対象外とする。
 node_modules/
 .DS_Store
