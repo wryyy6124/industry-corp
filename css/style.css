@@ -525,15 +525,17 @@ PC_START
   }
 
   .header__outer-contact {
+    writing-mode: vertical-rl;
     display: block;
     position: fixed;
     top: 0;
     right: 0;
-    writing-mode: vertical-rl;
+    z-index: 10;
   }
 
   .header__outer-link {
     background-color: var(--page-color-corporate);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     border-radius: 0 0 0 18px;
     color: var(--page-color-white);
     font-size: 14px;
