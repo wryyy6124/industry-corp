@@ -54,13 +54,13 @@ SPレイアウト_START
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 4.534vw 0 3.47vw 0;
+  padding: 12px 0;
   width: 89.3%;
   max-width: 1040px;
 }
 
 .header__logo {
-  width: 52.27vw;
+  width: 50vw;
   height: auto;
 }
 
@@ -93,7 +93,7 @@ body.boot_drawer .header__nav-body {
   right: 0;
   bottom: 0;
   z-index: 12;
-  padding: calc(6.534vw + 3.47vw + 9.47vw) 1.5em 0 8vw;
+  padding: 10em 1.5em 0 2.5em;
   width: 70vw;
   height: 100vh;
 }
@@ -113,15 +113,15 @@ body.boot_drawer .header__nav-list {
   gap: 6px;
   position: relative;
   z-index: 13;
-  width: 11.47vw;
-  height: 11.47vw;
+  width: 44px;
+  height: 44px;
 }
 
 .header__nav-hamburger > span {
   background-color: var(--page-color-white);
   transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
   margin: 0 auto;
-  width: calc(100% - (6.67vw / 2));
+  width: calc(100% - (44px / 2));
   height: 2px;
 }
 body.boot_drawer .header__nav-hamburger > span:first-of-type {
@@ -156,7 +156,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 }
 
 .header__nav-link[target="_blank"]::after {
-  background-image: url("../images/icon-link-bk.svg");
+  background-image: url("../images/common/icon-link-bk.svg");
   background-size: contain;
   background-repeat: no-repeat;
   content: "";
@@ -170,6 +170,32 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   メインコンテンツ
 ------------------------------- */
 
+.helo {
+  background-image: url("../images/top/sp/hero.png");
+  background-position: top;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+
+.helo__inner {
+  position: relative;
+  margin: 0 auto;
+  width: 89.3%;
+  max-width: 1040px;
+  height: auto;
+  min-height: 433px;
+}
+
+.helo__catch {
+  font-size: clamp(32px, 6vw, 40px);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  padding-top: 1.5em;
+}
+
 /* -------------------------------
   フッター
 ------------------------------- */
@@ -180,7 +206,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 
 .footer__inner {
   margin: 0 auto;
-  padding: 14.93vw 0 6.4vw 0;
+  padding: 60px 0 24px 0;
   width: 89.3%;
   max-width: 1040px;
 }
@@ -188,8 +214,8 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 .footer__content {
   display: flex;
   flex-flow: column-reverse wrap;
-  row-gap: 14.94vw;
-  margin-bottom: 21.3vw;
+  row-gap: 60px;
+  margin-bottom: 72px;
 }
 
 .footer__company {
@@ -197,7 +223,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 }
 
 .footer__logo {
-  margin-bottom: 8.8vw;
+  margin-bottom: 32px;
 }
 
 .footer__address > span:not(:last-of-type) {
@@ -212,7 +238,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 }
 
 .footer__nav-group:not(:last-of-type) {
-  margin-bottom: 14.94vw;
+  margin-bottom: 32px;
 }
 
 .footer__nav-link {
@@ -235,7 +261,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 }
 
 .footer__nav-link[target="_blank"]::after {
-  background-image: url("../images/icon-link-bk.svg");
+  background-image: url("../images/common/icon-link-bk.svg");
   background-size: contain;
   background-repeat: no-repeat;
   content: "";
@@ -246,7 +272,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 }
 
 .footer__nav-item:not(:last-of-type) {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .footer__copyright strong {
@@ -274,7 +300,6 @@ SPレイアウト_END
     ヘッダー
   ------------------------------- */
   .header__inner {
-    padding: 20px 0;
     width: calc(100% - 40px);
   }
 
@@ -289,19 +314,6 @@ SPレイアウト_END
     width: 50vw;
   }
 
-  .header__nav-item.sp__only {
-    display: none;
-  }
-
-  .header__nav-hamburger {
-    width: 5.735vw;
-    height: 5.735vw;
-  }
-
-  .header__nav-hamburger > span {
-    width: calc(100% - 2vw);
-  }
-
   /* -------------------------------
     メインコンテンツ
   ------------------------------- */
@@ -311,26 +323,13 @@ SPレイアウト_END
     height: 1500px;
   }
 
+  .helo {
+    background-image: url("../images/top/pc/hero.png");
+  }
+
   /* -------------------------------
     フッター
   ------------------------------- */
-
-  .footer__inner {
-    padding: 7.47vw 0 3.2vw 0;
-  }
-
-  .footer__content {
-    row-gap: 7.47vw;
-    margin-bottom: 10.15vw;
-  }
-
-  .footer__logo {
-    margin-bottom: 4.4vw;
-  }
-
-  .footer__nav-group:not(:last-of-type) {
-    margin-bottom: 7.47vw;
-  }
 }
 /* ===============================
 
@@ -355,7 +354,7 @@ PC_START
 
   .header__inner {
     align-items: flex-start;
-    padding: 24px 0 14px 0;
+    padding: 24px 0 96px 0;
   }
 
   .header__nav {
@@ -439,9 +438,26 @@ PC_START
     padding: 18px 8px;
   }
 
+  .header__nav-item.sp__only {
+    display: none;
+  }
+
   /* -------------------------------
     メインコンテンツ
   ------------------------------- */
+
+  .helo__inner {
+    width: calc(100% - 40px);
+    min-height: 500px;
+  }
+
+  .helo__catch {
+    font-size: 48px;
+    position: absolute;
+    left: 0;
+    top: -1.5em;
+    padding-top: 0;
+  }
 
   /* -------------------------------
     フッター
@@ -456,10 +472,6 @@ PC_START
     justify-content: space-between;
     column-gap: 0;
     margin-bottom: 80px;
-  }
-
-  .footer__logo {
-    margin-bottom: 32px;
   }
 
   .footer__nav {
