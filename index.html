@@ -28,6 +28,10 @@
 
     <!-- CSS Styles -->
     <link rel="stylesheet" href="./css/destyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
@@ -195,37 +199,134 @@
         <section id="Service" class="service main__section">
           <!-- inner -->
           <div class="service__inner">
-            <!-- header block -->
-            <div class="service__header">
-              <!-- header -->
-              <h2 class="service__heading">
-                <span class="service__heading-en">SERVICE</span>
-                <span class="service__heading-ja">事業内容</span>
-              </h2>
-              <!-- overview block -->
-              <div class="service__block">
+            <div class="service__block">
+              <div class="service__top">
                 <!-- header -->
-                <h3 class="service__subheading">事業概要</h3>
-                <!-- text -->
-                <p class="service__text">
-                  事業概要についてのテキストが入ります事業概要についてのテキストが入ります事業概要についてのテキストが入ります。
-                </p>
+                <div class="service__header-group">
+                  <h2 class="service__heading">
+                    <span class="service__heading-en">SERVICE</span>
+                    <span class="service__heading-ja">事業内容</span>
+                  </h2>
+                  <div class="service__image image01">
+                    <img
+                      src="./images/top/service-img01.png"
+                      alt="事業内容イメージ画像1"
+                    />
+                  </div>
+                </div>
+
+                <div class="service__sub-group">
+                  <figure class="service__figure">
+                    <figcaption class="service__caption">
+                      <!-- header -->
+                      <h3 class="service__subheading">事業概要</h3>
+                      <!-- text -->
+                      <p class="service__text">
+                        事業概要についてのテキストが入ります事業概要についてのテキストが入ります事業概要についてのテキストが入ります。
+                      </p>
+                    </figcaption>
+                    <div class="service__image">
+                      <img
+                        src="./images/top/service-img02.png"
+                        alt="事業内容イメージ画像2"
+                      />
+                    </div>
+                  </figure>
+                </div>
+              </div>
+              <div class="service__bottom">
+                <figure class="service__figure">
+                  <div class="service__image">
+                    <img
+                      src="./images/top/service-img03.png"
+                      alt="事業内容イメージ画像3"
+                    />
+                  </div>
+                  <figcaption class="service__caption">
+                    <h3 class="service__subheading">建設事例</h3>
+                    <p class="service__text">
+                      建設事例についてのテキストが入ります建設事例についてのテキストが入ります建設事例についてのテキストが入ります。
+                    </p>
+                  </figcaption>
+                </figure>
               </div>
             </div>
-            <!-- example block -->
-            <div class="service__block">
-              <!-- header -->
-              <h3 class="service__subheading">建設事例</h3>
-              <!-- text -->
-              <p class="service__text">
-                建設事例についてのテキストが入ります建設事例についてのテキストが入ります建設事例についてのテキストが入ります。
-              </p>
-            </div>
             <!-- slider block -->
-            <div class="service__slider">ここにスライダーを入れる予定</div>
+            <div class="service__slider">
+              <div id="serviceSwiper" class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-1.jpg"
+                      alt="スライダー画像1"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-2.jpg"
+                      alt="事業内容イメージ画像2"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-3.jpg"
+                      alt="事業内容イメージ画像3"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-4.jpg"
+                      alt="事業内容イメージ画像4"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-5.jpg"
+                      alt="事業内容イメージ画像5"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-1.jpg"
+                      alt="スライダー画像1"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-2.jpg"
+                      alt="事業内容イメージ画像2"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-3.jpg"
+                      alt="事業内容イメージ画像3"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-4.jpg"
+                      alt="事業内容イメージ画像4"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./images/top/service-case-5.jpg"
+                      alt="事業内容イメージ画像5"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
             <!-- button block -->
             <div class="service__link">
-              <a href="#" class="service__link-text">詳細を見る</a>
+              <a
+                href="#"
+                class="service__link-text common__button common__center-line"
+                >詳細を見る</a
+              >
             </div>
           </div>
         </section>
@@ -351,6 +452,7 @@
     </div>
 
     <!-- scripts -->
-    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/script.js" defer></script>
   </body>
 </html>
