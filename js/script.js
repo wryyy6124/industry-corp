@@ -49,4 +49,44 @@ $doc.addEventListener("DOMContentLoaded", () => {
   };
 
   humbugerMenu.init();
+
+  // ------------------------------------------------------------
+  // Swiper
+  // ------------------------------------------------------------
+  const serviceSwiper = new Swiper("#serviceSwiper", {
+    loop: true,
+    centeredSlides: true,
+
+    breakpoints: {
+      360: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+
+      768: {
+        slidesPerView: 2.4,
+        spaceBetween: 15,
+      },
+
+      1024: {
+        slidesPerView: 3.5,
+        spaceBetween: 20,
+      },
+    },
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+  });
 });

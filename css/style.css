@@ -393,11 +393,6 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 }
 
 .service__block {
-  padding-bottom: 40px;
-}
-
-.service__top,
-.service__bottom {
   position: relative;
   margin: 0 auto;
   width: 89.3%;
@@ -409,15 +404,6 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 .service__top .service__caption {
   margin-bottom: 16px;
 }
-
-/* .service__figure:not(:last-of-type),
-.service__caption:not(:last-child) {
-  margin-bottom: 16px;
-}
-
-.service__image:not(:last-child) {
-  margin-bottom: 32px;
-} */
 
 .service__bottom .service__image {
   margin-bottom: 32px;
@@ -476,6 +462,45 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   font-size: clamp(13px, 4vw, 14px);
 }
 
+.service__slider {
+  padding: 34px 0 24px 0;
+  width: 100%;
+  height: auto;
+}
+
+.service__link {
+  position: relative;
+  margin: 0 auto;
+  width: 89.3%;
+  max-width: 1040px;
+  height: auto;
+}
+
+.service__link-text {
+  max-width: 228px;
+  width: 100%;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 11.1vw;
+  height: 11.1vw;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: var(--page-color-white);
+  font-size: 5vw;
+}
+
 /* -------------------------------
   フッター
 ------------------------------- */
@@ -504,6 +529,7 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
 
 .footer__logo {
   margin-bottom: 32px;
+  width: fit-content;
 }
 
 .footer__address > span:not(:last-of-type) {
@@ -694,6 +720,20 @@ SPレイアウト_END
   .service__bottom .service__caption {
     margin-left: -5em;
     padding: 1.5em;
+  }
+
+  .service__image.image01 > img {
+    max-width: 100%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 6vw;
+    height: 6vw;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 3vw;
   }
 
   /* -------------------------------
@@ -952,6 +992,20 @@ PC_START
   .service__bottom .service__caption {
     flex: 1.25;
     margin-left: 0;
+  }
+
+  .swiper-slide img {
+    max-width: 100%;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 45px;
+    height: 45px;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 20px;
   }
 
   /* -------------------------------
