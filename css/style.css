@@ -956,6 +956,12 @@ PC_START
   }
 
   /* 事業内容 */
+  .service__block,
+  .service__link {
+    padding: 0 20px;
+    width: 100%;
+  }
+
   .service__top {
     gap: 64px;
   }
