@@ -501,6 +501,120 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   font-size: 5vw;
 }
 
+/* 採用情報 */
+.recruit__inner {
+  position: relative;
+  margin: 0 auto;
+  padding: 72px 0 80px 0;
+  width: 89.3%;
+  max-width: 1040px;
+  height: auto;
+}
+
+.recruit__top,
+.recruit__center,
+.recruit__bottom {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.recruit__top {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.recruit__top .recruit__image {
+  width: 100%;
+  height: auto;
+}
+
+.recruit__top .recruit__heading {
+  background-color: var(--page-color-white);
+  font-size: clamp(28px, 8vw, 36px);
+  font-weight: 700;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  writing-mode: vertical-rl;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5em 0 0.75em 0.35em;
+}
+
+.recruit__top .recruit__heading::before {
+  background-color: var(--page-color-corporate);
+  content: "";
+  position: absolute;
+  top: -75px;
+  left: 1.15em;
+  width: 1px;
+  height: 80px;
+}
+
+.recruit__top .recruit__heading-ja {
+  display: flex;
+  align-items: center;
+}
+
+.recruit__top .recruit__heading-en {
+  font-size: 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.recruit__center .recruit__image {
+  margin: 0 auto 0 0;
+  width: 60%;
+  height: auto;
+}
+
+.recruit__bottom {
+  margin-top: -159px;
+}
+
+.recruit__bottom .recruit__image {
+  margin-left: auto;
+  padding-bottom: 16px;
+  width: 50.15%;
+}
+
+.recruit__bottom .recruit__block {
+  margin-bottom: 16px;
+}
+
+.recruit__bottom .recruit__subheading {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.recruit__bottom .recruit__text {
+  font-size: 14px;
+}
+
+.recruit__bottom .recruit__link {
+  margin-right: auto;
+  width: 69.7%;
+}
+
+.recruit__bottom .recruit__link-text {
+  position: relative;
+}
+
+.recruit__bottom .recruit__link-text[target="_blank"]::after {
+  background-image: url("../images/common/icon-link-wt.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
 /* -------------------------------
   フッター
 ------------------------------- */
@@ -734,6 +848,77 @@ SPレイアウト_END
   .swiper-button-next::after,
   .swiper-button-prev::after {
     font-size: 3vw;
+  }
+
+  /* 採用情報 */
+  .recruit__top {
+    margin-bottom: 0;
+  }
+
+  .recruit__top .recruit__image {
+    margin-left: auto;
+    width: 62%;
+    max-width: fit-content;
+    z-index: 2;
+  }
+
+  .recruit__center .recruit__image {
+    margin-top: -148px;
+    /* width: 30%; */
+    width: 25%;
+  }
+
+  .recruit__bottom {
+    /* margin-top: -200px; */
+    margin-top: -50px;
+  }
+
+  .recruit__bottom .recruit__figure {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+    margin-left: auto;
+    width: 85%;
+    max-width: fit-content;
+  }
+
+  .recruit__bottom .recruit__image {
+    margin-left: initial;
+    padding-bottom: 0;
+    width: 50%;
+  }
+
+  .recruit__bottom .recruit__figcaption,
+  .recruit__bottom .recruit__block {
+    margin-bottom: 0;
+  }
+
+  .recruit__bottom .recruit__figcaption {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    width: 50%;
+    max-width: 280px;
+  }
+
+  .recruit__bottom .recruit__link {
+    width: 100%;
+    max-width: 227px;
+  }
+
+  .recruit__bottom .recruit__link-text {
+    position: relative;
+  }
+
+  .recruit__bottom .recruit__link-text[target="_blank"]::after {
+    background-image: url("../images/common/icon-link-wt.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em;
   }
 
   /* -------------------------------
@@ -1012,6 +1197,24 @@ PC_START
   .swiper-button-next::after,
   .swiper-button-prev::after {
     font-size: 20px;
+  }
+
+  .recruit__inner {
+    padding: 40px 20px;
+    width: 100%;
+  }
+
+  .recruit__image {
+    margin-left: auto;
+    max-width: fit-content;
+  }
+
+  .recruit__center .recruit__image {
+    width: 30%;
+  }
+
+  .recruit__bottom {
+    margin-top: -200px;
   }
 
   /* -------------------------------
