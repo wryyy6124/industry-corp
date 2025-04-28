@@ -5,6 +5,8 @@
 :root {
   --page-color-black: #2a2a2a;
   --page-color-white: #fff;
+  --page-color-gray: #f5f5f5;
+
   --page-color-corporate: #e60012;
 }
 
@@ -615,6 +617,88 @@ body.boot_drawer .header__nav-hamburger > span:last-of-type {
   height: 1em;
 }
 
+/* お問い合わせ */
+.inquiry {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.inquiry::before {
+  background-color: var(--page-color-gray);
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.inquiry__inner {
+  position: relative;
+  z-index: 3;
+  margin: 0 auto;
+  padding: 48px 0;
+  width: 89.3%;
+  max-width: 1040px;
+}
+
+.inquiry__contact {
+  background-color: var(--page-color-white);
+  text-align: center;
+  padding: 24px;
+}
+
+.inquiry__phone,
+.inquiry__form {
+  padding: 24px;
+}
+
+.inquiry__contact .inquiry__block:not(:last-of-type) {
+  border-bottom: 1px solid var(--page-color-corporate);
+}
+
+.inquiry__phone__h3 {
+  font-size: clamp(16px, 4vw, 18px);
+  font-weight: 700;
+}
+
+.inquiry__phone__h3,
+.inquiry__phone__list > li:not(:last-of-type) {
+  margin-bottom: 4px;
+}
+
+.inquiry__phone__number {
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 700;
+}
+
+.inquiry__phone__sales {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.inquiry__form__h3 {
+  font-size: clamp(16px, 4vw, 18px);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.inquiry__link {
+  margin: 0 auto;
+  width: 75%;
+  max-width: 228px;
+}
+
+.inquiry__link-text {
+  padding: 1.5em 1em;
+}
+
 /* -------------------------------
   フッター
 ------------------------------- */
@@ -864,12 +948,10 @@ SPレイアウト_END
 
   .recruit__center .recruit__image {
     margin-top: -148px;
-    /* width: 30%; */
     width: 25%;
   }
 
   .recruit__bottom {
-    /* margin-top: -200px; */
     margin-top: -50px;
   }
 
@@ -919,6 +1001,16 @@ SPレイアウト_END
     vertical-align: middle;
     width: 1em;
     height: 1em;
+  }
+
+  /* お問い合わせ */
+  .inquiry::before {
+    transform: skewX(15deg) translateX(-53%);
+    transform-origin: top right;
+  }
+
+  .inquiry__link {
+    width: 50%;
   }
 
   /* -------------------------------
@@ -1200,7 +1292,7 @@ PC_START
   }
 
   .recruit__inner {
-    padding: 40px 20px;
+    padding: 120px 20px;
     width: 100%;
   }
 
@@ -1215,6 +1307,34 @@ PC_START
 
   .recruit__bottom {
     margin-top: -200px;
+  }
+
+  /* お問い合わせ */
+  .inquiry__inner {
+    padding: 120px 20px;
+    width: 100%;
+  }
+
+  .inquiry__contact,
+  .inquiry__phone,
+  .inquiry__form {
+    padding: 40px;
+  }
+
+  .inquiry__contact {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .inquiry__contact .inquiry__block {
+    width: 50%;
+  }
+
+  .inquiry__contact .inquiry__block:not(:last-of-type) {
+    border-bottom: none;
+    border-right: 1px solid var(--page-color-corporate);
   }
 
   /* -------------------------------
