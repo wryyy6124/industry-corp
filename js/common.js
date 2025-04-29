@@ -1,6 +1,9 @@
 // ------------------------------
-// documentオブジェクト取得
+// documentオブジェクトを格納
+//
+// const $doc = document;
 // ------------------------------
+
 const $doc = document;
 
 // ------------------------------
@@ -54,56 +57,4 @@ $doc.addEventListener("DOMContentLoaded", () => {
   };
 
   humbugerMenu.init();
-
-  // ------------------------------------------------------------
-  // Swiper
-  // ------------------------------------------------------------
-
-  // 事業内容セクションのスライダーの挙動を定義
-  new Swiper("#serviceSwiper", {
-    // ループ
-    loop: true,
-
-    // スライダーの位置基準
-    centeredSlides: true,
-
-    // レスポンシブ対応
-    breakpoints: {
-      // SP
-      360: {
-        slidesPerView: 1,
-        spaceBetween: 0,
-      },
-
-      // TAB
-      768: {
-        slidesPerView: 1.92,
-        spaceBetween: 15,
-      },
-
-      // PC
-      1024: {
-        slidesPerView: 3.5,
-        spaceBetween: 20,
-      },
-    },
-
-    // ページネーション機能
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-
-    // ナビゲーション
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    // 自動再生
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-  });
 });

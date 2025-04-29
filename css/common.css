@@ -1,0 +1,506 @@
+@charset "UTF-8";
+
+/* -------------------------------
+  ページ共通スタイル_START
+------------------------------- */
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --page-color-black: #2a2a2a;
+  --page-color-opacityBlack: rgba(0, 0, 0, 0.4);
+  --page-color-white: #fff;
+  --page-color-gray: #f5f5f5;
+
+  --page-color-corporate: #e60012;
+
+  --page-font-weight-bold: 700;
+
+  --page-width-maximum: 100%;
+  --page-width-spLayout: 89.3%;
+  --page-width-pcLayout: 1040px;
+
+  --page-transition-seconds: 0.4s;
+}
+
+body {
+  color: var(--page-color-black);
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ ProN W3",
+    "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
+  line-height: 1.5;
+  position: relative;
+}
+
+img {
+  user-select: none;
+  vertical-align: bottom;
+  width: var(--page-width-maximum);
+  height: auto;
+}
+
+a {
+  display: block;
+  transition: opacity var(--page-transition-seconds);
+}
+a:hover {
+  opacity: 0.8;
+}
+
+/* -------------------------------
+  ページ共通スタイル_END
+------------------------------- */
+
+/* ===============================
+
+SPレイアウト_START
+~ 768px
+
+=============================== */
+
+/* -------------------------------
+  ページ共通パーツ
+------------------------------- */
+
+.common__button {
+  background-color: var(--page-color-corporate);
+  color: var(--page-color-white);
+  font-size: clamp(1.3rem, 5vw, 1.4rem);
+  font-weight: var(--page-font-weight-bold);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  position: relative;
+  padding: 1.5em 0 1.5em 1em;
+}
+
+.common__button.common__center-line::after {
+  background-color: var(--page-color-white);
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+}
+
+/* -------------------------------
+  ヘッダー
+------------------------------- */
+
+.header {
+  background-color: var(--page-color-white);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.header__inner {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1.2rem 0;
+  width: var(--page-width-spLayout);
+  max-width: var(--page-width-pcLayout);
+}
+
+.header__logo {
+  width: 50vw;
+  height: auto;
+}
+
+.header__nav-body {
+  background-color: var(--page-color-opacityBlack);
+  transition: var(--page-transition-seconds) visibility,
+    var(--page-transition-seconds) opacity;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 11;
+}
+body.boot_drawer .header__nav-body {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header__nav-list {
+  background-color: var(--page-color-white);
+  display: flex;
+  flex-flow: column wrap;
+  gap: 2em;
+  transition: var(--page-transition-seconds) transform,
+    var(--page-transition-seconds) visibility;
+  transform: translateX(100vw);
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 12;
+  padding: 10em 1.5em 0 2.5em;
+  width: 70vw;
+  height: 100vh;
+}
+body.boot_drawer .header__nav-list {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.header__nav-hamburger {
+  background-color: var(--page-color-corporate);
+  border-radius: 1000px;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 13;
+  width: 4.4rem;
+  height: 4.4rem;
+}
+
+.header__nav-hamburger > span {
+  background-color: var(--page-color-white);
+  transition: transform var(--page-transition-seconds) ease,
+    opacity var(--page-transition-seconds) ease,
+    background-color var(--page-transition-seconds) ease;
+  margin: 0 auto;
+  width: calc(var(--page-width-maximum) - (4.4rem / 2));
+  height: 2px;
+}
+body.boot_drawer .header__nav-hamburger > span:first-of-type {
+  transform: translateY(6px) rotate(45deg);
+}
+body.boot_drawer .header__nav-hamburger > span:last-of-type {
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+.header__outer-contact {
+  display: none;
+}
+
+.header__nav-link {
+  font-size: clamp(1.3rem, 4vw, 1.4rem);
+  font-weight: var(--page-font-weight-bold);
+  line-height: 1.57;
+  display: inline-block;
+  transition: var(--page-transition-seconds) color;
+  position: relative;
+  padding: 0.5em 1.5em;
+}
+.header__nav-link:hover {
+  color: var(--page-color-corporate);
+}
+
+.header__nav-link[target="_blank"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.header__nav-link[target="_blank"]::after {
+  background-image: url("../images/common/icon-link-bk.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
+/* -------------------------------
+  フッター
+------------------------------- */
+
+.footer {
+  border-top: 1px solid var(--page-color-corporate);
+}
+
+.footer__inner {
+  margin: 0 auto;
+  padding: 6rem 0 2.4rem 0;
+  width: var(--page-width-spLayout);
+  max-width: var(--page-width-pcLayout);
+}
+
+.footer__content {
+  display: flex;
+  flex-flow: column-reverse wrap;
+  row-gap: 6rem;
+  margin-bottom: 7.2rem;
+}
+
+.footer__company {
+  font-size: clamp(1.3rem, 4vw, 1.4rem);
+}
+
+.footer__logo {
+  margin-bottom: 3.2rem;
+  width: fit-content;
+}
+
+.footer__address > span:not(:last-of-type) {
+  margin-right: 1em;
+}
+
+.footer__contact > span {
+  display: inline-block;
+}
+.footer__contact > span:not(:last-of-type) {
+  margin-right: 1.5em;
+}
+
+.footer__nav-group:not(:last-of-type) {
+  margin-bottom: 3.2rem;
+}
+
+.footer__nav-link {
+  font-size: clamp(1.3rem, 4vw, 1.4rem);
+  line-height: 1.57;
+  display: inline-block;
+  transition: var(--page-transition-seconds) color;
+  position: relative;
+}
+.footer__nav-link:hover {
+  color: var(--page-color-corporate);
+}
+
+.footer__nav-link[target="_blank"] {
+  font-size: clamp(1.3rem, 4vw, 1.4rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.footer__nav-link[target="_blank"]::after {
+  background-image: url("../images/common/icon-link-bk.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
+.footer__nav-item:not(:last-of-type) {
+  margin-bottom: 1.5em;
+}
+
+.footer__copyright strong {
+  font-size: clamp(1.1rem, 3vw, 1.2rem);
+  font-weight: 400;
+  text-align: center;
+  display: block;
+}
+
+/* ===============================
+
+~ 768px
+SPレイアウト_END
+
+=============================== */
+
+/* ===============================
+
+タブレットレイアウト_START
+768px ~ 1023px
+
+=============================== */
+@media screen and (min-width: 768px) {
+  /* -------------------------------
+    ヘッダー
+  ------------------------------- */
+
+  .header__logo {
+    width: fit-content;
+    height: auto;
+  }
+
+  .header__nav-list {
+    gap: 2em;
+    padding: calc(3vw + 2.6vw + 5vw) 1.5em 0 4vw;
+    width: calc(var(--page-width-maximum) * 0.5);
+  }
+
+  /* -------------------------------
+    フッター
+  ------------------------------- */
+}
+/* ===============================
+
+768px ~ 1023px
+タブレットレイアウト_END
+
+=============================== */
+
+/* ===============================
+
+PC_START
+1024px ~
+
+=============================== */
+@media screen and (min-width: 1024px) {
+  img {
+    max-width: fit-content;
+  }
+
+  /* -------------------------------
+    ヘッダー
+  ------------------------------- */
+  .header {
+    position: initial;
+  }
+
+  .header__inner {
+    align-items: flex-start;
+    padding: 2.4rem 0 9.6rem 0;
+  }
+
+  .header__nav {
+    display: flex;
+    flex-wrap: row wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 7rem;
+    padding-right: 3rem;
+    width: var(--page-width-maximum);
+  }
+
+  .header__nav-body {
+    background-color: initial;
+    transition: initial;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    position: static;
+    z-index: 11;
+  }
+
+  .header__nav-list {
+    background-color: var(--page-color-white);
+    display: flex;
+    flex-flow: column-reverse wrap;
+    gap: 6.2rem;
+    writing-mode: vertical-rl;
+    transition: initial;
+    transform: translateX(0);
+    visibility: visible;
+    position: relative;
+    z-index: initial;
+    padding: 0;
+    width: fit-content;
+    height: auto;
+  }
+
+  .header__nav-link {
+    display: block;
+    padding: 0;
+  }
+  .header__nav-link[target="_blank"] {
+    gap: 0.8em;
+  }
+  .header__nav-link::before {
+    background-color: var(--page-color-corporate);
+    content: "";
+    position: absolute;
+    top: calc(var(--page-width-maximum) * (-1));
+    left: calc(var(--page-width-maximum) * 0.5);
+    width: 1px;
+    height: 0;
+    transform: translateX(-50%);
+    transition: height var(--page-transition-seconds) ease;
+  }
+
+  .header__nav-link:hover::before {
+    height: 6rem;
+  }
+
+  .header__nav-hamburger {
+    display: none;
+  }
+
+  .header__outer-contact {
+    writing-mode: vertical-rl;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .header__outer-link {
+    background-color: var(--page-color-corporate);
+    box-shadow: 0 0 4px var(--page-color-opacityBlack);
+    border-radius: 0 0 0 1.8rem;
+    color: var(--page-color-white);
+    font-size: 1.4rem;
+    font-weight: var(--page-font-weight-bold);
+    display: inline-flex;
+    padding: 1.8rem 0.8rem;
+  }
+
+  .header__nav-item.sp__only {
+    display: none;
+  }
+
+  /* -------------------------------
+    フッター
+  ------------------------------- */
+
+  .footer__inner {
+    padding: 7.9rem 2rem 2.4rem 2rem;
+  }
+
+  .footer__content {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    column-gap: 0;
+    margin-bottom: 8rem;
+  }
+
+  .footer__nav {
+    display: flex;
+    gap: 7.9rem;
+  }
+
+  .footer__nav-group {
+    background-color: var(--page-color-white);
+    display: flex;
+    flex-flow: column-reverse wrap;
+    gap: 2.8rem;
+    writing-mode: vertical-rl;
+    transition: initial;
+    position: relative;
+    width: fit-content;
+    height: auto;
+  }
+
+  .footer__nav-group:not(:last-of-type),
+  .footer__nav-item:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+
+  .footer__email {
+    display: block;
+    width: var(--page-width-maximum);
+  }
+}
+/* ===============================
+
+1024px ~
+PC_END
+
+=============================== */

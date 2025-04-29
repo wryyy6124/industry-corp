@@ -1,8 +1,10 @@
 # images配下の画像ファイル全てをGitでの管理対象外とする
 images/
 
-# HTMLテンプレート
+# テンプレート系ファイルもGitでの管理対象外とする
 template.html
+template.css
+template.js
 
 # 他、管理不要のファイルを対象外とする。
 node_modules/
