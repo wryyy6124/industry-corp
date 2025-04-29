@@ -9,12 +9,11 @@ html {
 }
 
 :root {
+  --page-color-corporate: #e60012;
   --page-color-black: #2a2a2a;
   --page-color-opacityBlack: rgba(0, 0, 0, 0.4);
   --page-color-white: #fff;
   --page-color-gray: #f5f5f5;
-
-  --page-color-corporate: #e60012;
 
   --page-font-weight-bold: 700;
 
